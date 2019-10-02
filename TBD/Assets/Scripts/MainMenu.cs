@@ -7,7 +7,7 @@ public class MainMenu : MonoBehaviour
 {
     public void PlayGame()
     {
-        SceneManager.LoadScene(""); 
+        SceneManager.LoadScene("TBD"); 
         /*LoadScene("tähän tulee itse peli scene nimi tai numero build managerissä") 
         mutta koska meillä on vielä tbd nimi ja ei olla buildattu niin jätän tyhjäksi.*/
     }
