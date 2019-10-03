@@ -12,6 +12,8 @@ public class PlayerController : MonoBehaviour
     public KeyCode right;
     public KeyCode jump;
     public KeyCode shoot;                   //TODO: Use "keycode shoot" to make players shoot projectiles
+    public KeyCode aimUp;
+    public KeyCode aimDown;
 
     private Rigidbody2D rb;
 
@@ -37,14 +39,15 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(left))
         {
             rb.velocity = new Vector2(-moveSpeed, rb.velocity.y);
-        } else if (Input.GetKey(right))
+        }
+        else if (Input.GetKey(right))
         {
             rb.velocity = new Vector2(moveSpeed, rb.velocity.y);
-        }else
+        }
+        else
         {
             rb.velocity = new Vector2(0f, rb.velocity.y);
         }
-
         if (Input.GetKeyDown(jump) && isGrounded)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
