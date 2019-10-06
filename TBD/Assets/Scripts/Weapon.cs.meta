@@ -3,7 +3,10 @@ guid: cef10985109a87746a5fb053bbee0a60
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - firePoint: {instanceID: 0}
+  - lineRenderer: {instanceID: 0}
+  - shootSound: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

@@ -12,12 +12,27 @@ public class Weapon : MonoBehaviour
 
     public LineRenderer lineRenderer;
 
+    public AudioClip shootSound;
+
+    private AudioSource source;
+
+    public float volLowRange;
+
+    public float volHighRange;
+
+    void Awake()
+    {
+        source = GetComponent<AudioSource>();
+    }
+
     // Update is called once per frame
     void Update()
     {
         if(Input.GetKeyDown(shoot))
         {
             StartCoroutine(Shoot());
+            float vol = Random.Range(volLowRange, volHighRange);
+            source.PlayOneShot(shootSound, vol);
         }
     }
 
