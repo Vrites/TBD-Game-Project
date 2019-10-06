@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -9,7 +10,9 @@ public class PlayerController : MonoBehaviour
     public float jumpForce;
     public float rSpeed;
 
-    public int health = 100;
+    public Image healthBar;
+    public float startHealth = 100;
+    private float health;
 
     private bool isFacingRight;
 
@@ -30,11 +33,14 @@ public class PlayerController : MonoBehaviour
 
     public bool isGrounded;
 
+    
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         arms = this.gameObject.transform.GetChild(0);
+        health = startHealth;
     }
 
     // Update is called once per frame
@@ -86,6 +92,7 @@ public class PlayerController : MonoBehaviour
     public void TakeDamage (int damage)
     {
         health -= damage;
+        healthBar.fillAmount = health / startHealth;
 
         if (health <= 0)
         {
