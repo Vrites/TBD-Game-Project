@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -32,6 +33,8 @@ public class PlayerController : MonoBehaviour
     public LayerMask whatIsGround;
 
     public bool isGrounded;
+
+    
 
     
 
@@ -97,6 +100,7 @@ public class PlayerController : MonoBehaviour
         if (health <= 0)
         {
             Die();
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 
