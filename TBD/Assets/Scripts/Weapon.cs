@@ -31,7 +31,7 @@ public class Weapon : MonoBehaviour
         if(Input.GetKeyDown(shoot))
         {
             StartCoroutine(Shoot());
-            float vol = Random.Range(volLowRange, volHighRange);
+            float vol = Random.Range(volLowRange, volHighRange); //Randomizes the shootSound volume slightly to sound less same-y
             source.PlayOneShot(shootSound, vol);
         }
     }
