@@ -28,7 +28,7 @@ public class Weapon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(shoot))
+        if(Input.GetKeyDown(shoot) && !PauseMenu.gameIsPaused)
         {
             StartCoroutine(Shoot());
             float vol = Random.Range(volLowRange, volHighRange); //Randomizes the shootSound volume slightly to sound less same-y

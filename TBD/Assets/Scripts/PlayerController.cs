@@ -53,11 +53,11 @@ public class PlayerController : MonoBehaviour
 
         //Movement
 
-        if (Input.GetKey(left))
+        if (Input.GetKey(left) && !PauseMenu.gameIsPaused)
         {
             rb.velocity = new Vector2(-moveSpeed, rb.velocity.y);
         }
-        else if (Input.GetKey(right))
+        else if (Input.GetKey(right) && !PauseMenu.gameIsPaused)
         {
             rb.velocity = new Vector2(moveSpeed, rb.velocity.y);
         }
@@ -65,7 +65,7 @@ public class PlayerController : MonoBehaviour
         {
             rb.velocity = new Vector2(0f, rb.velocity.y);
         }
-        if (Input.GetKeyDown(jump) && isGrounded)
+        if (Input.GetKeyDown(jump) && isGrounded && !PauseMenu.gameIsPaused)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
         }
@@ -82,11 +82,11 @@ public class PlayerController : MonoBehaviour
             transform.Rotate(0, 180f, 0);
         }
 
-        if (Input.GetKey(aimUp))
+        if (Input.GetKey(aimUp) && !PauseMenu.gameIsPaused)
         {
             arms.transform.Rotate(new Vector3(0, 0, rSpeed) * Time.deltaTime);
         }
-        else if (Input.GetKey(aimDown))
+        else if (Input.GetKey(aimDown) && !PauseMenu.gameIsPaused)
         {
             arms.transform.Rotate(new Vector3(0, 0, -rSpeed) * Time.deltaTime);
         }
