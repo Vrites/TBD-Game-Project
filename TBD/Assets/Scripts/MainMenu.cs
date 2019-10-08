@@ -8,13 +8,12 @@ public class MainMenu : MonoBehaviour
     public void PlayGame()
     {
         SceneManager.LoadScene("TBD"); 
-        /*LoadScene("tähän tulee itse peli scene nimi tai numero build managerissä") 
-        mutta koska meillä on vielä tbd nimi ja ei olla buildattu niin jätän tyhjäksi.*/
+        //LoadScene
     }
     public void QuitGame()
     {
         Debug.Log("Quit!");
         Application.Quit();
-        //Universaali exit käsky
+        //Universal exit command.
     }
 }

@@ -12,7 +12,7 @@ public class PauseMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape)) //If ESC key is pressed, scene either pauses or resumes.
         {
             if (gameIsPaused)
             {

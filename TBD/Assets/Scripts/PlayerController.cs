@@ -92,6 +92,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    //This method descreases health from player and updates the health bar.
     public void TakeDamage (int damage)
     {
         health -= damage;
@@ -100,10 +101,11 @@ public class PlayerController : MonoBehaviour
         if (health <= 0)
         {
             Die();
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name); //Restart scene
         }
     }
 
+    //This method kills the player.
     void Die()
     {
         Destroy(gameObject);

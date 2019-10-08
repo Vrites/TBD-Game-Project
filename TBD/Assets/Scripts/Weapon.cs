@@ -8,7 +8,7 @@ public class Weapon : MonoBehaviour
 
     public int damage;
 
-    public KeyCode shoot;                   //TODO: Use "keycode shoot" to make players shoot projectiles
+    public KeyCode shoot; 
 
     public LineRenderer lineRenderer;
 
@@ -60,7 +60,7 @@ public class Weapon : MonoBehaviour
 
         lineRenderer.enabled = true;
 
-        yield return new WaitForSeconds(0.02f);
+        yield return new WaitForSeconds(0.02f); //Waits for 20ms before can shoot again.
 
         lineRenderer.enabled = false;
     }

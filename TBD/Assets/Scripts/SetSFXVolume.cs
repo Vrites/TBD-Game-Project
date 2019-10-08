@@ -15,6 +15,7 @@ public class SetSFXVolume : MonoBehaviour
         slider.value = PlayerPrefs.GetFloat("SFXVolume", 0.75f); 
     }
 
+    //Sound effect (shooting) controller in Main menu.
     public void SetLevel()
     {
         float sliderValue = slider.value;

@@ -14,6 +14,7 @@ public class SetMusicVolume : MonoBehaviour
         slider.value = PlayerPrefs.GetFloat("BGMVolume", 0.75f);
     }
 
+    //Music volume controller in Main menu.
     public void SetLevel()
     {
         float sliderValue = slider.value;
