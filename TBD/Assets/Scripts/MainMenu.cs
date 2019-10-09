@@ -7,6 +7,8 @@ public class MainMenu : MonoBehaviour
 {
     public void PlayGame()
     {
+        PlayerPrefs.SetInt("PlayerOneScore", 0);
+        PlayerPrefs.SetInt("PlayerTwoScore", 0);
         SceneManager.LoadScene("TBD"); 
         //LoadScene
     }

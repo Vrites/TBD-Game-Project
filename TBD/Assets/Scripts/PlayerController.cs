@@ -26,6 +26,8 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
 
     public GameObject player;
+    public GameObject playerOne;
+    public GameObject playerTwo;
 
     public Transform arms;
     public Transform groundCheckPoint;
@@ -39,7 +41,7 @@ public class PlayerController : MonoBehaviour
     
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         arms = this.gameObject.transform.GetChild(0);
@@ -101,13 +103,22 @@ public class PlayerController : MonoBehaviour
         if (health <= 0)
         {
             Die();
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name); //Restart scene
         }
     }
 
     //This method kills the player.
     void Die()
     {
-        Destroy(gameObject);
+        GameManager.Instance.EndOfRound();
+        DestroyImmediate(gameObject);
+        if (playerOne == null)
+        {
+            GameManager.playerTwoScore++;
+        }
+        else if (playerTwo == null)
+        {
+            GameManager.playerOneScore++;
+        }
+        GameManager.Instance.Save();
     }
 }
